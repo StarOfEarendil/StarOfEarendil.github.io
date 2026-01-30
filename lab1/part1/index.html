@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8"/>
+	<meta name="author" content="DR. Eleanor Gaye"/>
 		<title>INFT1206 Lab 1 Part 1</title>
+		<style>
+				body {
+		  font: 1.2em / 1.5 system-ui;
+		}
+
+		.sender-column {
+		  text-align: right;
+		}
+
+		h1 {
+		  font-size: 1.5em;
+		}
+
+		h2 {
+		  font-size: 1.3em;
+		}
+		</style>
 	<!--
 		Name: Kyle Donnelly
 		File: index.html
@@ -12,20 +30,22 @@
 	-->
 </head>
 <body>
-	<address>
-			Dr. Eleanor Gaye<br>
+	<address class = "sender-column">
+			<strong>Dr. Eleanor Gaye</strong><br>
 		Awesome Science faculty<br>
 		University of Awesome<br>
 		Bobtown, CA 99999,<br>
 		USA<br>
-		Tel: 123-456-7890<br>
-		Email: no_reply@example.com
+		<strong>Tel:</strong> 123-456-7890<br>
+		<strong>Email:</strong> no_reply@example.com
 	</address>
 	
-20 January 2016
+<p class = "sender-column">
+<time datetime= "2016-01-20">20 January 2016</time>
+</p>
 
 	<address>
-		Miss Eileen Dover<br><br>
+		<strong>Miss Eileen Dover</strong><br>
 		4321 Cliff Top Edge<br>
 		Dover, CT9 XXX<br>
 		UK
@@ -37,7 +57,7 @@
 
 <p>Thank you for your recent application to join us at the University of
 Awesome's science faculty to study as part of your
-PhD (Doctor of Philosophy) next year. I will answer your
+<abbr title="Doctor of Philosophy">PhD</abbr> next year. I will answer your
 questions one by one, in the following sections.</p>
 
 
@@ -48,9 +68,9 @@ however it would suit us better if you could start at the beginning of a
 semester; the start dates for each one are as follows:</p>
 
 <ul>
-<li>First semester: 9 September 2016</li>
-<li>Second semester: 15 January 2017</li>
-<li>Third semester: 2 May 2017</li>
+<li>First semester: <time datetime "2016-09-09">9 September 2016</time></li>
+<li>Second semester: <time datetime "2017-01-15"> 15 January 2017</time></li>
+<li>Third semester: <time datetime "2017-05-02"> 2 May 2017</time></li>
 </ul>
 
 <p>Please let me know if this is ok, and if so which start date you would
@@ -67,13 +87,12 @@ priority:</p>
 
 <p>
 <ol>
-<li>Turning H2O into wine, and the health benefits of Resveratrol
-(C14H12O3).</li>
+<li>Turning H<sub>2</sub>O into wine, and the health benefits of Resveratrol
+(C<sub>14</sub>H<sub>12</sub>O<sub>3</sub>).</li>
 <li>Measuring the effect on performance of funk bass players at temperatures
 exceeding 30°C (86°F), when the audience size exponentially increases
-(effect of 3 × 103 increasing to 3 × 104).</li>
-<li>HTML, Hypertext Markup Language, and CSS,
-Cascading Style Sheets, constructs for representing musical scores.</li>
+(effect of 3 × 10<sup>3</sup> increasing to 3 × 10<sup>4</sup>).</li>
+<li><abbr title="Hypertext Markup Language">HTML</abbr>, and <abbr title="Cascading Style Sheets">CSS</abbr>, constructs for representing musical scores.</li>
 </ol>
 </p>
 
@@ -84,13 +103,13 @@ other resources, and anything else you think we'd need to know? Thanks.
 <h2>Exotic dance moves</h2>
 
 <p>Yes, you are right! As part of my post-doctorate work, I
-did study exotic tribal dances. To answer your question, my
+<em>did</em> study exotic tribal dances. To answer your question, my
 favorite dances are as follows, with definitions:</p>
 
 <dl>
 <dt>Polynesian chicken dance</dt>
-    <dd>A little known but very influential dance dating back as far as
-    300 BCE, a whole village would
+    <dd>A little known but <em>very</em> influential dance dating back as far as
+    300 <abbr title="Before Common Era">BCE</abbr>, a whole village would
     dance around in a circle like chickens, to encourage their livestock to
     be "fruitful".</dd>
 <dt>Icelandic brownian shuffle</dt>
@@ -109,9 +128,9 @@ favorite dances are as follows, with definitions:</p>
 
 <p>Yours sincerely,</p>
 
-Dr Eleanor Gaye
+<p>Dr Eleanor Gaye</p>
 
-University of Awesome motto: Be awesome to each other. --
-The memoirs of Bill S Preston, Esq.
+<p>University of Awesome motto: <q>Be awesome to each other.</q> --
+<cite>The memoirs of Bill S Preston, <abbr title="Esquire">Esq.</abbr></cite></p>
 </body>
 </html>
