@@ -109,18 +109,27 @@ article {
   flex: 4;
 }
 
+/* || sidebar gallery */
+
 aside {
   flex: 1;
+  /* Turn on Grid - this creates a perfect checkerboard */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
+  gap: 10px; /* Adds space between the photos */
+  align-content: start; /* Ensures photos stay at the top */
 }
 
 aside a {
+  /* Remove float and width - Grid handles the layout now */
   display: block;
-  float: left;
-  width: 50%;
 }
 
 aside img {
-  max-width: 100%;
+  width: 100%;       /* Fill the column width */
+  height: 150px;     /* Force ALL images to be exactly this tall */
+  object-fit: cover; /* THE MAGIC TRICK: This crops the image to fill the square without stretching it */
+  border-radius: 5px; /* Optional: adds nice rounded corners */
 }
 
 footer {
