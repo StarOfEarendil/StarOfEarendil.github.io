@@ -12,12 +12,6 @@ html {
   background-color: darkgrey;
 }
 
-body {
-  width: 70%;
-  min-width: 800px;
-  margin: 0 auto;
-}
-
 /* || typography */
 
 h1,
