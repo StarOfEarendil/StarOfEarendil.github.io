@@ -1,7 +1,10 @@
 /* || General setup */
 
 body {
-  margin: 0;
+	width: 95%;
+	max-width: 1600px;
+	min-width: 800px;
+    margin: 0 auto;
 }
 
 html {
@@ -106,7 +109,7 @@ main {
 }
 
 article {
-  flex: 4;
+  flex: 3;
 }
 
 /* || sidebar gallery */
