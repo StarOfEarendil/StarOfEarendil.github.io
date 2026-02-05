@@ -138,3 +138,77 @@ aside h2 {
 footer {
   margin-top: 10px;
 }
+
+/* =========================================
+   MIDDLE-EARTH THEMES
+   ========================================= */
+
+/* --- ABOUT ME: THE SHIRE --- 
+   Vibe: Nature, Growth, Hobbies.
+   Colors: Lush grass green with earthy brown text. */
+body.shire {
+    background-color: #2E8B57; /* SeaGreen */
+}
+body.shire main, 
+body.shire header, 
+body.shire nav, 
+body.shire article, 
+body.shire aside, 
+body.shire footer {
+    background-color: #F5F5DC; /* Beige/Cream (Like a Hobbit hole map) */
+    color: #4B3621;            /* Dark Oak Brown text */
+}
+
+/* --- PROJECTS: EREBOR (The Lonely Mountain) --- 
+   Vibe: Machining, Building, Metal, Code.
+   Colors: Dark Stone Grey with Gold accents. Perfect for your machinist background. */
+body.erebor {
+    background-color: #2F4F4F; /* Dark Slate Gray */
+}
+body.erebor main, 
+body.erebor header, 
+body.erebor nav, 
+body.erebor article, 
+body.erebor footer {
+    background-color: #1C1C1C; /* Dark Industrial Grey */
+    color: #D4AF37;            /* Metallic Gold text */
+    border: 2px solid #D4AF37; /* Gold border looks fancy */
+}
+/* Make links on the dark background readable */
+body.erebor a {
+    color: #D4AF37; 
+}
+
+/* --- PHOTOS: RIVENDELL (The Last Homely House) --- 
+   Vibe: Beautiful, Art, Calm, "Starlight".
+   Colors: Deep Midnight Blue with Silver text. Makes photos pop! */
+body.rivendell {
+    background-color: #191970; /* Midnight Blue */
+}
+body.rivendell main, 
+body.rivendell header, 
+body.rivendell nav, 
+body.rivendell article, 
+body.rivendell aside, 
+body.rivendell footer {
+    background-color: #F0F8FF; /* AliceBlue (Very light silver/white) */
+    color: #000080;            /* Navy text */
+}
+
+/* --- LINKS: ROHAN (The Horse Lords) --- 
+   Vibe: Connections, Travel, Speed (F1).
+   Colors: Leather Brown, Green, and Wheat/Gold. */
+body.rohan {
+    background-color: #556B2F; /* Dark Olive Green */
+}
+body.rohan main, 
+body.rohan header, 
+body.rohan nav, 
+body.rohan article, 
+body.rohan footer {
+    background-color: #8B4513; /* Saddle Brown */
+    color: #FFDEAD;            /* Navajo White / Wheat text */
+}
+body.rohan a {
+    color: #FFD700;            /* Bright Gold links */
+}
