@@ -17,13 +17,13 @@ html {
 h1,
 h2 {
   font-family: "Cinzel Decorative", cursive;
-  color: #000000;
+  /* Color removed - we will set it manually below */
 }
 
 p,
 li {
   font-family: "Roboto Condensed", sans-serif;
-  color: #000000;
+  /* Color removed - we will set it manually below */
 }
 
 h1 {
@@ -142,6 +142,44 @@ footer {
 /* =========================================
    MIDDLE-EARTH THEMES
    ========================================= */
+
+/* --- HOME PAGE: MORDOR / BALROG THEME --- 
+   Vibe: Fire, Shadow, and the Deep Places of the World. */
+
+/* 1. The Background (Magma) */
+body.mordor {
+    background-color: #8b0000; /* Your Dark Red */
+}
+
+/* 2. The Content Boxes (Shadow) 
+   We turn the boxes Black so the text pops out */
+body.mordor main, 
+body.mordor header, 
+body.mordor nav, 
+body.mordor article, 
+body.mordor footer {
+    background-color: #1a0505; /* Very dark, almost black red */
+    border: 2px solid #ff4500; /* Orange-Red border (Lava) */
+    box-shadow: 0 0 15px #000000; /* Spooky shadow behind the boxes */
+}
+
+/* 3. The Text (Fire) */
+body.mordor h1, 
+body.mordor h2, 
+body.mordor a {
+    color: #ff4500; /* Red-Orange (Like the Balrog's whip) */
+    text-shadow: 0px 0px 5px #ff0000; /* faint glow */
+}
+
+body.mordor p, 
+body.mordor li {
+    color: #ffbf00; /* Golden/Amber text (Readable on black) */
+}
+
+/* 4. The Links */
+body.mordor nav a:hover {
+    color: #ffffff; /* Turns white hot when you hover */
+}
 
 /* --- ABOUT ME: THE SHIRE --- 
    Vibe: Nature, Growth, Hobbies.
