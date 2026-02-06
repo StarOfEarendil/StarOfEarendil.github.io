@@ -172,6 +172,7 @@ body.shire aside,
 body.shire footer {
     background-color: #F5F5DC;
     color: #4B3621;
+	border: 2px solid #4B3621;
 }
 body.shire h2, body.shire a {
     color: #4B3621;
@@ -226,6 +227,7 @@ body.rivendell aside,
 body.rivendell footer {
     background-color: #F0F8FF;
     color: #000080;
+	border: 2px solid #000080;
 }
 body.rivendell h2, body.rivendell a {
     color: #000080;
@@ -253,6 +255,7 @@ body.rohan aside,
 body.rohan footer {
     background-color: #8B4513;
     color: #FFDEAD;
+	border: 2px solid #FFD700;
 }
 body.rohan h2 {
     color: #FFD700;
