@@ -1,252 +1,270 @@
 /* || General setup */
 
 body {
-	width: 95%;
-	max-width: 1600px;
-	min-width: 800px;
+    width: 95%;
+    max-width: 1600px;
+    min-width: 800px;
     margin: 0 auto;
 }
 
 html {
-  font-size: 10px;
-  background-color: darkgrey;
+    font-size: 10px;
+    background-color: darkgrey; /* Fallback color */
 }
 
-/* || typography */
+/* || Typography Defaults */
 
-h1,
-h2 {
-  font-family: "Cinzel Decorative", cursive;
-  /* Color removed - we will set it manually below */
+h1, h2 {
+    font-family: "Cinzel Decorative", cursive; /* Default Header Font */
 }
 
-p,
-li {
-  font-family: "Roboto Condensed", sans-serif;
-  /* Color removed - we will set it manually below */
+p, li {
+    font-family: "Roboto Condensed", sans-serif; /* Default Body Font */
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
 
 h1 {
-  font-size: 4rem;
-  text-align: center;
-  text-shadow: 2px 2px 10px black;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 2px 2px 10px black;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 h2 {
-  font-size: 3rem;
-  text-align: center;
+    font-size: 3rem;
+    text-align: center;
 }
 
-p,
-li {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-/* || header layout */
+/* || Layout Sections */
 
 header {
-  margin-bottom: 10px;
-}
-
-main,
-header,
-nav,
-article,
-aside,
-footer,
-section {
-  background-color: #8B0000;
-  padding: 1%;
-}
-
-h1 {
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+    margin-bottom: 10px;
 }
 
 header img {
-  height: 60px;
+    height: 60px;
 }
 
+/* IMPORTANT: Default background is white so themes can override it later */
+main, header, nav, article, aside, footer, section {
+    background-color: #ffffff; 
+    padding: 1%;
+}
+
+/* || Navigation */
+
 nav ul {
-  padding: 0;
-  list-style-type: none;
-  display: flex;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
 }
 
 nav li {
-  text-align: center;
-  flex: 1;
+    text-align: center;
+    flex: 1;
 }
 
 nav a {
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
 }
 
-nav a:hover,
-nav a:focus {
-  color: red;
+nav a:hover, nav a:focus {
+    color: red;
 }
 
-/* || main layout */
+/* || Main Layout & Sidebar Grid */
 
 main {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 article {
-  flex: 3;
+    flex: 3;
 }
 
-/* || sidebar gallery */
-
 aside {
-  flex: 1;
-  /* Turn on Grid - this creates a perfect checkerboard */
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
-  gap: 10px; /* Adds space between the photos */
-  align-content: start; /* Ensures photos stay at the top */
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-content: start;
 }
 
 aside a {
-  /* Remove float and width - Grid handles the layout now */
-  display: block;
+    display: block;
 }
 
 aside img {
-  width: 100%;       /* Fill the column width */
-  height: 150px;     /* Force ALL images to be exactly this tall */
-  object-fit: cover; /* THE MAGIC TRICK: This crops the image to fill the square without stretching it */
-  border-radius: 5px; /* Optional: adds nice rounded corners */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 aside h2 {
-	grid-column: span 2;
-	text-align: center;
-	margin-bottom: 20px;
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 footer {
-  margin-top: 10px;
+    margin-top: 10px;
 }
+
 
 /* =========================================
-   MIDDLE-EARTH THEMES
+   MIDDLE-EARTH THEMES (Colors + Fonts)
    ========================================= */
 
-/* --- HOME PAGE: MORDOR / BALROG THEME --- 
-   Vibe: Fire, Shadow, and the Deep Places of the World. */
-
-/* 1. The Background (Magma) */
+/* --- HOME PAGE: MORDOR (UnifrakturMaguntia) --- */
 body.mordor {
-    background-color: #8b0000; /* Your Dark Red */
+    background-color: #8b0000;
 }
-
-/* 2. The Content Boxes (Shadow) 
-   We turn the boxes Black so the text pops out */
 body.mordor main, 
 body.mordor header, 
 body.mordor nav, 
 body.mordor article, 
+body.mordor aside,
 body.mordor footer {
-    background-color: #1a0505; /* Very dark, almost black red */
-    border: 2px solid #ff4500; /* Orange-Red border (Lava) */
-    box-shadow: 0 0 15px #000000; /* Spooky shadow behind the boxes */
+    background-color: #1a0505;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 15px #000000;
 }
-
-/* 3. The Text (Fire) */
-body.mordor h1, 
-body.mordor h2, 
-body.mordor a {
-    color: #ff4500; /* Red-Orange (Like the Balrog's whip) */
-    text-shadow: 0px 0px 5px #ff0000; /* faint glow */
+/* Text Colors */
+body.mordor h2, body.mordor a {
+    color: #ff4500; 
+    text-shadow: 0px 0px 5px #ff0000;
 }
-
-body.mordor p, 
-body.mordor li {
-    color: #ffbf00; /* Golden/Amber text (Readable on black) */
+body.mordor p, body.mordor li {
+    color: #ffbf00;
 }
-
-/* 4. The Links */
 body.mordor nav a:hover {
-    color: #ffffff; /* Turns white hot when you hover */
+    color: #ffffff;
+}
+/* Custom H1 Font */
+body.mordor h1 {
+    font-family: "UnifrakturMaguntia", cursive;
+    color: #ff4500;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-shadow: 0px 0px 5px #ff0000;
 }
 
-/* --- ABOUT ME: THE SHIRE --- 
-   Vibe: Nature, Growth, Hobbies.
-   Colors: Lush grass green with earthy brown text. */
+
+/* --- ABOUT ME: THE SHIRE (Eagle Lake) --- */
 body.shire {
-    background-color: #2E8B57; /* SeaGreen */
+    background-color: #2E8B57;
 }
 body.shire main, 
 body.shire header, 
 body.shire nav, 
 body.shire article, 
-body.shire aside, 
+body.shire aside,
 body.shire footer {
-    background-color: #F5F5DC; /* Beige/Cream (Like a Hobbit hole map) */
-    color: #4B3621;            /* Dark Oak Brown text */
+    background-color: #F5F5DC;
+    color: #4B3621;
+}
+body.shire h2, body.shire a {
+    color: #4B3621;
+}
+/* Custom H1 Font */
+body.shire h1 {
+    font-family: "Eagle Lake", cursive;
+    color: #4B3621;
+    font-size: 4rem;
+    text-shadow: 1px 1px 2px #d4c4a8;
+    font-weight: normal; 
+    text-transform: none; /* Looks better lowercase/natural */
 }
 
-/* --- PROJECTS: EREBOR (The Lonely Mountain) --- 
-   Vibe: Machining, Building, Metal, Code.
-   Colors: Dark Stone Grey with Gold accents. Perfect for your machinist background. */
+
+/* --- PROJECTS: EREBOR (Metamorphous) --- */
 body.erebor {
-    background-color: #2F4F4F; /* Dark Slate Gray */
+    background-color: #2F4F4F;
 }
 body.erebor main, 
 body.erebor header, 
 body.erebor nav, 
 body.erebor article, 
+body.erebor aside,
 body.erebor footer {
-    background-color: #1C1C1C; /* Dark Industrial Grey */
-    color: #D4AF37;            /* Metallic Gold text */
-    border: 2px solid #D4AF37; /* Gold border looks fancy */
+    background-color: #1C1C1C;
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
 }
-/* Make links on the dark background readable */
-body.erebor a {
-    color: #D4AF37; 
+body.erebor h2, body.erebor a {
+    color: #D4AF37;
+}
+/* Custom H1 Font */
+body.erebor h1 {
+    font-family: "Metamorphous", cursive;
+    color: #D4AF37;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-/* --- PHOTOS: RIVENDELL (The Last Homely House) --- 
-   Vibe: Beautiful, Art, Calm, "Starlight".
-   Colors: Deep Midnight Blue with Silver text. Makes photos pop! */
+
+/* --- PHOTOS: RIVENDELL (Tangerine) --- */
 body.rivendell {
-    background-color: #191970; /* Midnight Blue */
+    background-color: #191970;
 }
 body.rivendell main, 
 body.rivendell header, 
 body.rivendell nav, 
 body.rivendell article, 
-body.rivendell aside, 
+body.rivendell aside,
 body.rivendell footer {
-    background-color: #F0F8FF; /* AliceBlue (Very light silver/white) */
-    color: #000080;            /* Navy text */
+    background-color: #F0F8FF;
+    color: #000080;
+}
+body.rivendell h2, body.rivendell a {
+    color: #000080;
+}
+/* Custom H1 Font */
+body.rivendell h1 {
+    font-family: "Tangerine", cursive;
+    color: #000080;
+    font-size: 7rem; /* Huge because the font is small */
+    font-weight: 700;
+    line-height: 0.8;
+    text-transform: none;
 }
 
-/* --- LINKS: ROHAN (The Horse Lords) --- 
-   Vibe: Connections, Travel, Speed (F1).
-   Colors: Leather Brown, Green, and Wheat/Gold. */
+
+/* --- LINKS: ROHAN (MedievalSharp) --- */
 body.rohan {
-    background-color: #556B2F; /* Dark Olive Green */
+    background-color: #556B2F;
 }
 body.rohan main, 
 body.rohan header, 
 body.rohan nav, 
 body.rohan article, 
+body.rohan aside,
 body.rohan footer {
-    background-color: #8B4513; /* Saddle Brown */
-    color: #FFDEAD;            /* Navajo White / Wheat text */
+    background-color: #8B4513;
+    color: #FFDEAD;
+}
+body.rohan h2 {
+    color: #FFD700;
 }
 body.rohan a {
-    color: #FFD700;            /* Bright Gold links */
+    color: #FFD700;
+}
+/* Custom H1 Font */
+body.rohan h1 {
+    font-family: "MedievalSharp", cursive;
+    color: #FFDEAD;
+    font-size: 4.5rem;
+    text-transform: capitalize;
 }
