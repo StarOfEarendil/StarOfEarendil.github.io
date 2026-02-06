@@ -125,7 +125,7 @@ footer {
    MIDDLE-EARTH THEMES (Colors + Fonts)
    ========================================= */
 
-/* --- HOME PAGE: MORDOR (UnifrakturMaguntia) --- */
+/* --- HOME PAGE: MORDOR (Original Cinzel Font) --- */
 body.mordor {
     background-color: #8b0000;
 }
@@ -150,13 +150,12 @@ body.mordor p, body.mordor li {
 body.mordor nav a:hover {
     color: #ffffff;
 }
-/* Custom H1 Font */
+/* Custom H1 Font - REVERTED TO ORIGINAL */
 body.mordor h1 {
-    font-family: "UnifrakturMaguntia", cursive;
+    font-family: "Cinzel Decorative", cursive; /* Back to original */
+    font-weight: 900; /* Extra bold to look menacing */
     color: #ff4500;
     font-size: 5rem;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
     text-shadow: 0px 0px 5px #ff0000;
 }
 
@@ -184,7 +183,7 @@ body.shire h1 {
     font-size: 4rem;
     text-shadow: 1px 1px 2px #d4c4a8;
     font-weight: normal; 
-    text-transform: none; /* Looks better lowercase/natural */
+    text-transform: none; 
 }
 
 
@@ -235,7 +234,7 @@ body.rivendell h2, body.rivendell a {
 body.rivendell h1 {
     font-family: "Tangerine", cursive;
     color: #000080;
-    font-size: 7rem; /* Huge because the font is small */
+    font-size: 7rem; 
     font-weight: 700;
     line-height: 0.8;
     text-transform: none;
