@@ -270,3 +270,104 @@ body.rohan h1 {
     font-size: 4.5rem;
     text-transform: capitalize;
 }
+
+/* =========================================
+   QUICK TRAVEL DROPDOWN LOGIC
+   ========================================= */
+
+/* 1. Position the container */
+li.dropdown {
+    display: inline-block;
+    position: relative; /* Crucial: Keeps the menu attached to the button */
+}
+
+/* 2. Hide the content by default */
+.dropdown-content {
+    display: none; /* Hidden! */
+    position: absolute;
+    right: 0; /* Aligns the menu to the right edge of the button */
+    min-width: 180px;
+    z-index: 1000; /* Ensures it sits ON TOP of everything else */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+/* 3. Style the links inside */
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    font-size: 1.6rem; /* Slightly smaller text for the list */
+    text-transform: none; /* Easier to read */
+}
+
+/* 4. THE TRIGGER: Show menu on hover */
+li.dropdown:hover .dropdown-content {
+    display: block; /* Show it! */
+}
+
+
+/* =========================================
+   THEMED COLORS FOR DROPDOWN
+   ========================================= */
+
+/* MORDOR (Red/Black) */
+body.mordor .dropdown-content {
+    background-color: #1a0505;
+    border: 2px solid #ff4500;
+}
+body.mordor .dropdown-content a {
+    color: #ff4500;
+}
+body.mordor .dropdown-content a:hover {
+    background-color: #330000;
+    color: #ffffff;
+}
+
+/* SHIRE (Beige/Green) */
+body.shire .dropdown-content {
+    background-color: #F5F5DC;
+    border: 2px solid #4B3621;
+}
+body.shire .dropdown-content a {
+    color: #4B3621;
+}
+body.shire .dropdown-content a:hover {
+    background-color: #e0e0c0;
+}
+
+/* EREBOR (Dark Grey/Gold) */
+body.erebor .dropdown-content {
+    background-color: #1C1C1C;
+    border: 2px solid #D4AF37;
+}
+body.erebor .dropdown-content a {
+    color: #D4AF37;
+}
+body.erebor .dropdown-content a:hover {
+    background-color: #333333;
+}
+
+/* RIVENDELL (White/Blue) */
+body.rivendell .dropdown-content {
+    background-color: #F0F8FF;
+    border: 2px solid #000080;
+}
+body.rivendell .dropdown-content a {
+    color: #000080;
+}
+body.rivendell .dropdown-content a:hover {
+    background-color: #dbeaff;
+}
+
+/* ROHAN (Brown/Gold) */
+body.rohan .dropdown-content {
+    background-color: #8B4513;
+    border: 2px solid #FFD700;
+}
+body.rohan .dropdown-content a {
+    color: #FFDEAD;
+}
+body.rohan .dropdown-content a:hover {
+    background-color: #5D2906;
+}
