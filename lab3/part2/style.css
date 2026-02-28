@@ -80,3 +80,18 @@ a:hover {
   text-decoration: none;
   color: #773333;
 }
+
+/*Lists*/
+
+ul,
+ol {
+  margin: 1rem 0;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: lower-roman;
+}
