@@ -16,3 +16,14 @@ ul {
   padding: 30px;
   border-radius: 20px;
 }
+
+h1 {
+  color: darkslategray;
+  border-bottom: 10px dotted purple;
+  font-size: 2rem;
+}
+
+h2 {
+  font-style: italic;
+  font-size: 1.5rem;
+}
