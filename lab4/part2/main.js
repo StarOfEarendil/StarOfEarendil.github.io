@@ -15,7 +15,6 @@ const images = [
 
 // 2. Add the images to the thumbnail bar
 
-// Create a baseURL constant (Set to empty string since images are locally saved)
 const baseURL = "";
 
 // Create a for...of loop
@@ -45,7 +44,6 @@ function updateDisplayedImage(e) {
 
 // 4. Wire up the Darken/Lighten button
 btn.addEventListener("click", function() {
-  // Conditional structure testing the class
   if (btn.classList.contains("dark")) {
     btn.textContent = "Lighten";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0.5)";
@@ -54,6 +52,5 @@ btn.addEventListener("click", function() {
     overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
   }
   
-  // Stretch goal: Toggle the dark class using a single line of code
   btn.classList.toggle("dark");
 });
