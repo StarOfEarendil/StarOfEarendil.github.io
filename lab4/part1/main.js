@@ -31,7 +31,6 @@ function result() {
   let zItem = randomValueFromArray(insertZ);
 
   // Uses newStory.replaceAll() to replace placeholders
-  // Note: :insertx: is in the string twice, so replaceAll is perfect here
   newStory = newStory.replaceAll(':insertx:', xItem);
   newStory = newStory.replaceAll(':inserty:', yItem);
   newStory = newStory.replaceAll(':insertz:', zItem);
