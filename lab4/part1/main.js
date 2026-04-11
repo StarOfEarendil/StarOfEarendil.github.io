@@ -1,55 +1,57 @@
-// Complete variable definitions and random function
+// 1. COMPLETE VARIABLE AND FUNCTION DEFINITIONS
 
-const customName = document.getElementById("custom-name");
-const generateBtn = document.querySelector(".generate");
-const story = document.querySelector(".story");
+const customName = document.getElementById('custom-name');
+const generateBtn = document.querySelector('.generate');
+const story = document.querySelector('.story');
 
-function randomValueFromArray(array) {
-  const random = Math.floor(Math.random() * array.length);
+function randomValueFromArray(array){
+  const random = Math.floor(Math.random()*array.length);
   return array[random];
 }
 
-// Solution: Raw text strings
+// 2. RAW TEXT STRINGS
 
-const characters = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
-const places = ["the soup kitchen", "Disneyland", "the White House"];
-const events = [
-  "spontaneously combusted",
-  "melted into a puddle on the sidewalk",
-  "turned into a slug and slithered away",
-];
+const storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
 
-// Solution: Partial return random string function
+const insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
+const insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
+const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and slithered away'];
 
-function returnRandomStoryString() {
-  const randomCharacter = randomValueFromArray(characters);
-  const randomPlace = randomValueFromArray(places);
-  const randomEvent = randomValueFromArray(events);
+// 3. EVENT LISTENER AND PARTIAL GENERATE FUNCTION DEFINITION
 
-  let storyText = `It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk. When they got to ${randomPlace}, they stared in horror for a few moments, then ${randomEvent}. Bob saw the whole thing, but was not surprised — ${randomCharacter} weighs 300 pounds, and it was a hot day.`;
+generateBtn.addEventListener('click', result);
 
-  return storyText;
-}
+function result() {
+  // Creates a new variable newStory set equal to storyText
+  let newStory = storyText;
 
-// Solution: Event listener and partial generate function definition
+  // Creates three variables set by selecting a random element
+  let xItem = randomValueFromArray(insertX);
+  let yItem = randomValueFromArray(insertY);
+  let zItem = randomValueFromArray(insertZ);
 
-generateBtn.addEventListener("click", generateStory);
+  // Uses newStory.replaceAll() to replace placeholders
+  // Note: :insertx: is in the string twice, so replaceAll is perfect here
+  newStory = newStory.replaceAll(':insertx:', xItem);
+  newStory = newStory.replaceAll(':inserty:', yItem);
+  newStory = newStory.replaceAll(':insertz:', zItem);
 
-function generateStory() {
-  let newStory = returnRandomStoryString();
-
-  if (customName.value !== "") {
+  // If user enters a name, replace 'Bob'
+  if(customName.value !== '') {
     const name = customName.value;
-    newStory = newStory.replace("Bob", name);
+    newStory = newStory.replaceAll('Bob', name);
   }
 
-  if (document.getElementById("uk").checked) {
-    const weight = `${Math.round(300 / 14)} stone`;
-    const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
-    newStory = newStory.replace("300 pounds", weight);
-    newStory = newStory.replace("94 Fahrenheit", temperature);
+  // If UK radio is checked, convert weights and temperatures
+  if(document.getElementById("uk").checked) {
+    const weight = Math.round(300 / 14) + ' stone';
+    const temperature = Math.round((94 - 32) * 5 / 9) + ' centigrade';
+    
+    newStory = newStory.replaceAll('300 pounds', weight);
+    newStory = newStory.replaceAll('94 fahrenheit', temperature);
   }
 
+  // Sets the story.textContent equal to the modified newStory variable
   story.textContent = newStory;
-  story.style.visibility = "visible";
+  story.style.visibility = 'visible';
 }
