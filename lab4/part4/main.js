@@ -4,7 +4,6 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-// Grab the paragraph element for the score
 const para = document.querySelector('p');
 let count = 0;
 
@@ -16,7 +15,6 @@ function randomRGB() {
   return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
 }
 
-// 1. Create the base Shape class
 class Shape {
   constructor(x, y, velX, velY) {
     this.x = x;
@@ -26,13 +24,12 @@ class Shape {
   }
 }
 
-// 2. Make Ball extend Shape
 class Ball extends Shape {
   constructor(x, y, velX, velY, color, size) {
-    super(x, y, velX, velY); // Call the parent Shape constructor
+    super(x, y, velX, velY); 
     this.color = color;
     this.size = size;
-    this.exists = true; // Track if it's been eaten
+    this.exists = true; 
   }
 
   draw() {
@@ -54,7 +51,6 @@ class Ball extends Shape {
 
   collisionDetect() {
     for (const ball of balls) {
-      // Only check collisions for balls that still exist
       if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
@@ -68,14 +64,12 @@ class Ball extends Shape {
   }
 }
 
-// 3. Create the EvilCircle class
 class EvilCircle extends Shape {
   constructor(x, y) {
-    super(x, y, 20, 20); // Hardcode velocity to 20
+    super(x, y, 20, 20); 
     this.color = 'white';
     this.size = 10;
 
-    // Set up the WASD controls
     window.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "a": this.x -= this.velX; break;
@@ -88,14 +82,13 @@ class EvilCircle extends Shape {
 
   draw() {
     ctx.beginPath();
-    ctx.strokeStyle = this.color; // Use stroke instead of fill
-    ctx.lineWidth = 3;            // Make the line thicker
+    ctx.strokeStyle = this.color; 
+    ctx.lineWidth = 3;            
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.stroke();
   }
 
   checkBounds() {
-    // Just bounce it back slightly if it hits the wall, don't auto-move it
     if ((this.x + this.size) >= width) { this.x -= this.size; }
     if ((this.x - this.size) <= 0) { this.x += this.size; }
     if ((this.y + this.size) >= height) { this.y -= this.size; }
@@ -109,11 +102,10 @@ class EvilCircle extends Shape {
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // If the evil circle hits a ball, eat it!
         if (distance < this.size + ball.size) {
           ball.exists = false;
-          count--; // Drop the score
-          para.textContent = 'Ball count: ' + count; // Update the HTML text
+          count--; 
+          para.textContent = 'Ball count: ' + count; 
         }
       }
     }
@@ -134,11 +126,10 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
-  count++; // Add to the score for every ball generated
+  count++; 
   para.textContent = 'Ball count: ' + count; 
 }
 
-// Instantiate the Evil Circle
 const evilBall = new EvilCircle(random(0, width), random(0, height));
 
 function loop() {
@@ -146,14 +137,13 @@ function loop() {
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    if (ball.exists) { // Only draw and update balls that haven't been eaten
+    if (ball.exists) { 
       ball.draw();
       ball.update();
       ball.collisionDetect();
     }
   }
 
-  // Draw and update the Evil Circle every frame
   evilBall.draw();
   evilBall.checkBounds();
   evilBall.collisionDetect();
