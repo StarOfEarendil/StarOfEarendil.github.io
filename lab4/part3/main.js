@@ -12,6 +12,7 @@ function randomRGB() {
   return `rgb(${random(0, 255)} ${random(0, 255)} ${random(0, 255)})`;
 }
 
+// All of the ball's features merged into ONE single class
 class Ball {
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
@@ -21,27 +22,14 @@ class Ball {
     this.color = color;
     this.size = size;
   }
-}
 
-class Ball {
-  // …
   draw() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
-}
 
-const testBall = new Ball(50, 100, 4, 4, "blue", 10);
-
-testBall.x;
-testBall.size;
-testBall.color;
-testBall.draw();
-
-class Ball {
-  // …
   update() {
     if (this.x + this.size >= width) {
       this.velX = -this.velX;
@@ -62,7 +50,21 @@ class Ball {
     this.x += this.velX;
     this.y += this.velY;
   }
-}
+
+  collisionDetect() {
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
+} // End of the Ball class
 
 const balls = [];
 
@@ -82,37 +84,7 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
-function loop() {
-  ctx.fillStyle = "rgb(0 0 0 / 25%)";
-  ctx.fillRect(0, 0, width, height);
-
-  for (const ball of balls) {
-    ball.draw();
-    ball.update();
-  }
-
-  requestAnimationFrame(loop);
-}
-
-loop();
-
-class Ball {
-  // …
-  collisionDetect() {
-    for (const ball of balls) {
-      if (this !== ball) {
-        const dx = this.x - ball.x;
-        const dy = this.y - ball.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < this.size + ball.size) {
-          ball.color = this.color = randomRGB();
-        }
-      }
-    }
-  }
-}
-
+// ONE single animation loop function
 function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
@@ -125,3 +97,6 @@ function loop() {
 
   requestAnimationFrame(loop);
 }
+
+// Start the animation
+loop();
