@@ -12,7 +12,6 @@ function randomRGB() {
   return `rgb(${random(0, 255)} ${random(0, 255)} ${random(0, 255)})`;
 }
 
-// All of the ball's features merged into ONE single class
 class Ball {
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
@@ -64,15 +63,14 @@ class Ball {
       }
     }
   }
-} // End of the Ball class
+} 
 
 const balls = [];
 
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
+   
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
@@ -84,7 +82,6 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
-// ONE single animation loop function
 function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
@@ -98,5 +95,4 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-// Start the animation
 loop();
