@@ -52,14 +52,7 @@ p, li, table {
 /* || header layout */
 
 article, footer, .secondary {
-  background-color: white; 
-}
-
-nav {
-  background-color: #f0d0f0; 
-}
-
-article, footer, .secondary {
+  background-color: white;
   padding: 10px 30px;
 }
 
@@ -67,9 +60,9 @@ article {
   margin-right: 10px;
 }
 
-div[class="nav"] {
+nav {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #f0d0f0;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
